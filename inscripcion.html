@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inscripción | Muralla Gaming</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #050505;
+      border-bottom: 1px solid #252525;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #f5f5f5;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #e21b16;
+    }
+
+    .volver {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #333;
+      padding: 9px 13px;
+      border-radius: 7px;
+    }
+
+    .volver:hover {
+      border-color: #e21b16;
+    }
+
+    main {
+      max-width: 720px;
+      margin: auto;
+      padding: 45px 18px 60px;
+    }
+
+    .encabezado {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .etiqueta {
+      color: #e21b16;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 9vw, 58px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: #e21b16;
+    }
+
+    .encabezado p {
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    .formulario {
+      background: #101010;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 25px 18px;
+    }
+
+    .formulario h2 {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .campo {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #303030;
+      border-radius: 8px;
+      background: #080808;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #e21b16;
+    }
+
+    .jugadores-titulo {
+      margin: 28px 0 14px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .jugadores {
+      display: grid;
+      gap: 12px;
+    }
+
+    .boton {
+      width: 100%;
+      margin-top: 25px;
+      padding: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #e21b16;
+      color: white;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .boton:hover {
+      opacity: .9;
+    }
+
+    .nota {
+      text-align: center;
+      color: #777;
+      font-size: 11px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #222;
+      padding: 25px 15px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    @media (min-width: 600px) {
+      .formulario {
+        padding: 35px;
+      }
+
+      .jugadores {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      MURALLA <span>GAMING</span>
+    </div>
+
+    <a href="index.html" class="volver">
+      ← Volver
+    </a>
+  </header>
+
+  <main>
+
+    <section class="encabezado">
+      <div class="etiqueta">MURALLA GAMING ESPORTS</div>
+
+      <h1>
+        INSCRIBE TU <span>EQUIPO</span>
+      </h1>
+
+      <p>
+        Registra a tu escuadra para participar
+        en nuestros torneos de Call of Duty: Mobile.
+      </p>
+    </section>
+
+    <section class="formulario">
+
+      <h2>Registro del equipo</h2>
+
+      <form id="registroForm">
+
+        <div class="campo">
+          <label for="equipo">Nombre del equipo</label>
+          <input
+            type="text"
+            id="equipo"
+            name="equipo"
+            placeholder="Ej. Muralla Squad"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="capitan">Nombre del capitán</label>
+          <input
+            type="text"
+            id="capitan"
+            name="capitan"
+            placeholder="Nombre del capitán"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="idcod">ID de Call of Duty: Mobile</label>
+          <input
+            type="text"
+            id="idcod"
+            name="idcod"
+            placeholder="ID del jugador"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="whatsapp">WhatsApp de contacto</label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="Número de contacto"
+            required>
+        </div>
+
+        <div class="jugadores-titulo">
+          JUGADORES DEL EQUIPO
+        </div>
+
+        <div class="jugadores">
+
+          <input
+            type="text"
+            name="jugador1"
+            placeholder="Jugador 1"
+            required>
+
+          <input
+            type="text"
+            name="jugador2"
+            placeholder="Jugador 2"
+            required>
+
+          <input
+            type="text"
+            name="jugador3"
+            placeholder="Jugador 3"
+            required>
+
+          <input
+            type="text"
+            name="jugador4"
+            placeholder="Jugador 4"
+            required>
+
+          <input
+            type="text"
+            name="jugador5"
+            placeholder="Jugador 5"
+            required>
+
+          <input
+            type="text"
+            name="suplente"
+            placeholder="Suplente (opcional)">
+
+        </div>
+
+        <button type="submit" class="boton">
+          🏆 ENVIAR INSCRIPCIÓN
+        </button>
+
+        <p class="nota">
+          Tus datos se utilizarán únicamente para gestionar
+          la inscripción al torneo.
+        </p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Muralla Gaming · Todos los derechos reservados
+  </footer>
+
+  <script>
+    document.getElementById("registroForm").addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      alert("¡Inscripción preparada! Próximamente conectaremos este formulario con Google Sheets.");
+
+    });
+  </script>
+
+</body>
+  </html>
