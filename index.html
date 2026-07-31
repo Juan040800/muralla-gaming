@@ -1,262 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Muralla Gaming - Torneos de Call of Duty: Mobile">
-  <title>Muralla Gaming | Esports</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Muralla Gaming | Torneos COD Mobile</title>
 
-    body {
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.5;
-    }
+<link rel="stylesheet" href="style.css">
 
-    header {
-      background: #050505;
-      border-bottom: 1px solid #252525;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .logo span {
-      color: #e21b16;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    .menu {
-      font-size: 27px;
-    }
-
-    .hero {
-      padding: 70px 22px;
-      text-align: center;
-      background:
-        radial-gradient(circle at center, #3b0b0b 0%, #110707 35%, #080808 70%);
-    }
-
-    .tag {
-      color: #e21b16;
-      font-weight: bold;
-      letter-spacing: 3px;
-      font-size: 13px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 14vw, 76px);
-      line-height: .95;
-      margin: 15px 0;
-      font-weight: 950;
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      color: #e21b16;
-      display: block;
-      font-style: italic;
-    }
-
-    .hero p {
-      color: #c5c5c5;
-      max-width: 520px;
-      margin: 0 auto 28px;
-      font-size: 16px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #e21b16;
-      color: white;
-      padding: 15px 24px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 0;
-      cursor: pointer;
-      box-shadow: 0 8px 25px #e21b1630;
-    }
-
-    .btn:hover {
-      background: #ff2923;
-    }
-
-    section {
-      padding: 45px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 25px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
-
-    .section-title span {
-      color: #e21b16;
-    }
-
-    .tournament {
-      border: 1px solid #681512;
-      border-radius: 14px;
-      padding: 25px;
-      background: linear-gradient(145deg, #161616, #0b0b0b);
-    }
-
-    .tournament small {
-      color: #e21b16;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .tournament h3 {
-      font-size: 28px;
-      margin: 8px 0 18px;
-    }
-
-    .info {
-      display: grid;
-      gap: 12px;
-      color: #ccc;
-      margin-bottom: 24px;
-    }
-
-    .info strong {
-      color: white;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #292929;
-      border-radius: 12px;
-      padding: 20px 12px;
-      text-align: center;
-    }
-
-    .icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .card h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      color: #999;
-      font-size: 13px;
-    }
-
-    .events {
-      display: grid;
-      gap: 10px;
-    }
-
-    .event {
-      border: 1px solid #292929;
-      border-radius: 10px;
-      padding: 16px;
-      background: #101010;
-    }
-
-    .event strong {
-      display: block;
-      font-size: 16px;
-    }
-
-    .event span {
-      color: #999;
-      font-size: 13px;
-    }
-
-    .status {
-      color: #e21b16 !important;
-      font-weight: bold;
-      margin-top: 4px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 45px 20px 25px;
-      border-top: 1px solid #222;
-      background: #050505;
-    }
-
-    footer h2 {
-      font-size: 25px;
-    }
-
-    footer h2 span {
-      color: #e21b16;
-    }
-
-    footer p {
-      color: #888;
-      margin: 12px 0 25px;
-      font-size: 14px;
-    }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 25px;
-      font-size: 22px;
-    }
-
-    @media (min-width: 700px) {
-      .hero {
-        padding: 110px 30px;
-      }
-
-      .cards {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .info {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
+<div class="background-glow"></div>
 
-<div class="logo">
-MURALLA <span>GAMING</span>
-</div>
+<header id="header">
 
-<nav class="menu">
+<div class="container">
 
-<a href="index.html">Inicio</a>
+<a href="index.html" class="logo">
+
+<span>MURALLA</span>
+
+<strong>GAMING</strong>
+
+</a>
+
+<nav id="menu">
+
+<a href="index.html" class="active">Inicio</a>
 
 <a href="torneos.html">Torneos</a>
 
@@ -270,321 +49,352 @@ MURALLA <span>GAMING</span>
 
 </nav>
 
-</header> 
-  
-  <main>
+<div class="menu-mobile">
 
-    <section class="hero">
-      <div class="tag">BIENVENIDOS A</div>
+<i class="fas fa-bars"></i>
 
-      <h1>
-        MURALLA
-        <span>GAMING</span>
-      </h1>
+</div>
 
-      <p>
-        La plataforma de torneos de Call of Duty: Mobile
-        donde la competencia comienza.
-      </p>
-<a href="inscripcion.html" class="botón">🏆 INSCRIBIR MI EQUIPO</a>
-    </section>
+</div>
 
-    <section id="torneo">
+</header>
 
-      <h2 class="section-title">
-        <span>—</span> Torneo destacado <span>—</span>
-      </h2>
+<section class="hero">
 
-      <div class="tournament">
+<div class="hero-overlay"></div>
 
-        <small>PRÓXIMO TORNEO</small>
+<div class="container hero-content">
 
-        <h3>MURALLA GAMING CUP #1</h3>
+<span class="tag">
 
-        <div class="info">
-          <div>📅 <strong>Fecha por anunciar</strong></div>
-          <div>👥 <strong>16 equipos</strong></div>
-          <div>💰 <strong>Inscripción por anunciar</strong></div>
-        </div>
+🔥 TORNEOS OFICIALES DE CALL OF DUTY® MOBILE
 
-        <a href="#contacto" class="btn">MÁS INFORMACIÓN →</a>
+</span>
 
-      </div>
-    </section>
+<h1>
 
-    <section>
+Domina el campo de batalla con
 
-      <h2 class="section-title">
-        <span>—</span> ¿Por qué Muralla Gaming? <span>—</span>
-      </h2>
+<span>Muralla Gaming</span>
 
-      <div class="cards">
+</h1>
 
-        <div class="card">
-          <div class="icon">🏆</div>
-          <h3>TORNEOS</h3>
-          <p>Competencia organizada para equipos de COD Mobile.</p>
-        </div>
+<p>
 
-        <div class="card">
-          <div class="icon">👥</div>
-          <h3>COMUNIDAD</h3>
-          <p>Una comunidad creada para los amantes de los esports.</p>
-        </div>
+Participa en torneos competitivos, demuestra tu nivel y compite por premios junto a los mejores jugadores de Colombia.
 
-        <div class="card">
-          <div class="icon">🎁</div>
-          <h3>PREMIOS</h3>
-          <p>Reconocimiento y premios para los mejores equipos.</p>
-        </div>
+</p>
 
-        <div class="card">
-          <div class="icon">🛡️</div>
-          <h3>ORGANIZACIÓN</h3>
-          <p>Reglas claras y torneos transparentes.</p>
-        </div>
+<div class="hero-buttons">
 
-      </div>
-    </section>
+<a href="inscripcion.html" class="btn-primary">
 
-    <section>
+🏆 Inscribir mi equipo
 
-      <h2 class="section-title">
-        <span>—</span> Próximos torneos <span>—</span>
-      </h2>
+</a>
 
-      <div class="events">
+<a href="torneos.html" class="btn-secondary">
 
-        <div class="event">
-          <strong>Muralla Gaming Cup #1</strong>
-          <span>16 equipos · Fecha por anunciar</span>
-          <div class="status">PRÓXIMAMENTE</div>
-        </div>
+📅 Ver torneos
 
-        <div class="event">
-          <strong>Muralla Summer Cup</strong>
-          <span>Próximamente · Más información pronto</span>
-          <div class="status">PRÓXIMAMENTE</div>
-        </div>
+</a>
 
-        <div class="event">
-          <strong>Muralla Championship</strong>
-          <span>Gran torneo · Próximamente</span>
-          <div class="status">PRÓXIMAMENTE</div>
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </section>
+<div class="hero-scroll">
 
-  </main>
+<i class="fas fa-angle-down"></i>
 
-  <footer id="contacto">
+</div>
 
-    <h2>ESTO ES <span>MURALLA GAMING</span></h2>
-
-    <p>Competencia. Comunidad. Pasión.</p>
-
-    <div class="social">
-      <span>◎</span>
-      <span>▶</span>
-      <span>♪</span>
-      <span>◉</span>
-    </div>
-
-    <p>© 2026 Muralla Gaming · Todos los derechos reservados.</p>
-
-  </footer>
-<!-- INSCRIPCIÓN -->
-<section id="inscripcion" class="registro-section">
-  <div class="registro-box">
-    <div class="registro-tag">MURALLA GAMING</div>
-
-    <h2>INSCRIBE A TU <span>EQUIPO</span></h2>
-
-    <p>
-      Registra tu equipo para participar en el próximo torneo
-      de Call of Duty: Mobile.
-    </p>
-
-    <form id="registroForm">
-
-      <div class="campo">
-        <label for="equipo">Nombre del equipo</label>
-        <input
-          type="text"
-          id="equipo"
-          name="equipo"
-          placeholder="Ej. Muralla Squad"
-          required
-        >
-      </div>
-
-      <div class="campo">
-        <label for="capitan">Capitán</label>
-        <input
-          type="text"
-          id="capitan"
-          name="capitan"
-          placeholder="Nombre del capitán"
-          required
-        >
-      </div>
-
-      <div class="campo">
-        <label for="idcod">ID de COD Mobile</label>
-        <input
-          type="text"
-          id="idcod"
-          name="idcod"
-          placeholder="ID del capitán"
-          required
-        >
-      </div>
-
-      <div class="campo">
-        <label for="whatsapp">WhatsApp de contacto</label>
-        <input
-          type="tel"
-          id="whatsapp"
-          name="whatsapp"
-          placeholder="300 000 0000"
-          required
-        >
-      </div>
-
-      <h3>JUGADORES</h3>
-
-      <div class="jugadores">
-        <input type="text" name="jugador1" placeholder="Jugador 1" required>
-        <input type="text" name="jugador2" placeholder="Jugador 2" required>
-        <input type="text" name="jugador3" placeholder="Jugador 3" required>
-        <input type="text" name="jugador4" placeholder="Jugador 4" required>
-        <input type="text" name="jugador5" placeholder="Jugador 5" required>
-        <input type="text" name="suplente" placeholder="Suplente (opcional)">
-      </div>
-
-      <button type="submit" class="btn registro-btn">
-        🏆 ENVIAR INSCRIPCIÓN
-      </button>
-
-      <p class="privacidad">
-        Tus datos serán utilizados únicamente para gestionar
-        la inscripción al torneo.
-      </p>
-
-    </form>
-  </div>
 </section>
 
-<style>
-  .registro-section {
-    padding: 50px 20px;
-    max-width: 850px;
-    margin: auto;
-  }
+<section class="stats">
 
-  .registro-box {
-    background: #101010;
-    border: 1px solid #681512;
-    border-radius: 16px;
-    padding: 25px 20px;
-    box-shadow: 0 10px 35px rgba(0,0,0,.35);
-  }
+<div class="container">
 
-  .registro-tag {
-    color: #e21b16;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-  }
+<div class="card">
 
-  .registro-box h2 {
-    font-size: 30px;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
+<h2>500+</h2>
 
-  .registro-box h2 span {
-    color: #e21b16;
-  }
+<p>Jugadores registrados</p>
 
-  .registro-box > p {
-    color: #999;
-    margin-bottom: 25px;
-  }
+</div>
 
-  .campo {
-    margin-bottom: 17px;
-  }
+<div class="card">
 
-  .campo label {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 7px;
-  }
+<h2>30+</h2>
 
-  .campo input,
-  .jugadores input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #303030;
-    background: #080808;
-    color: white;
-    outline: none;
-    font-size: 15px;
-  }
+<p>Torneos realizados</p>
 
-  .campo input:focus,
-  .jugadores input:focus {
-    border-color: #e21b16;
-  }
+</div>
 
-  .registro-box h3 {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin: 28px 0 12px;
-  }
+<div class="card">
 
-  .jugadores {
-    display: grid;
-    gap: 10px;
-    margin-bottom: 25px;
-  }
+<h2>$10M+</h2>
 
-  .registro-btn {
-    width: 100%;
-    font-size: 15px;
-  }
+<p>Premios entregados</p>
 
-  .privacidad {
-    text-align: center;
-    color: #666 !important;
-    font-size: 11px;
-    margin-top: 15px;
-  }
+</div>
 
-  @media (min-width: 650px) {
-    .registro-box {
-      padding: 35px;
-    }
+</div>
 
-    .jugadores {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
+</section>
+<section class="featured">
 
-<script>
-  document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+<div class="container">
 
-    alert("¡Registro preparado! Próximamente conectaremos este formulario con Google Sheets.");
+<div class="section-title">
 
-  });
-</script>
+<h2>Torneo Destacado</h2>
+
+<p>Compite contra los mejores equipos de Call of Duty: Mobile.</p>
+
+</div>
+
+<div class="featured-card">
+
+<div class="featured-info">
+
+<span class="badge">ABIERTO</span>
+
+<h3>Copa Muralla #1</h3>
+
+<p>
+Inscripciones abiertas para equipos de 5 jugadores. Cupos limitados.
+</p>
+
+<ul>
+
+<li><i class="fas fa-calendar"></i> Fecha: Próximamente</li>
+
+<li><i class="fas fa-users"></i> 16 Equipos</li>
+
+<li><i class="fas fa-trophy"></i> Premio: $1.000.000 COP</li>
+
+</ul>
+
+<a href="inscripcion.html" class="btn-primary">
+
+Inscribirse ahora
+
+</a>
+
+</div>
+
+<div class="featured-image">
+
+<div class="image-placeholder">
+
+🎮
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cards-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Explora Muralla Gaming</h2>
+
+<p>Todo lo que necesitas para competir.</p>
+
+</div>
+
+<div class="cards-grid">
+
+<a href="torneos.html" class="info-card">
+
+<div class="icon">
+
+🏆
+
+</div>
+
+<h3>Torneos</h3>
+
+<p>
+
+Consulta todos los torneos disponibles.
+
+</p>
+
+</a>
+
+<a href="resultados.html" class="info-card">
+
+<div class="icon">
+
+📊
+
+</div>
+
+<h3>Resultados</h3>
+
+<p>
+
+Conoce los campeones y clasificaciones.
+
+</p>
+
+</a>
+
+<a href="reglamento.html" class="info-card">
+
+<div class="icon">
+
+📜
+
+</div>
+
+<h3>Reglamento</h3>
+
+<p>
+
+Lee las reglas oficiales antes de competir.
+
+</p>
+
+</a>
+
+<a href="contacto.html" class="info-card">
+
+<div class="icon">
+
+📞
+
+</div>
+
+<h3>Contacto</h3>
+
+<p>
+
+¿Necesitas ayuda? Comunícate con nosotros.
+
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+
+¿Listo para demostrar quién domina el campo de batalla?
+
+</h2>
+
+<p>
+
+Únete a la comunidad competitiva de Muralla Gaming.
+
+</p>
+
+<a href="inscripcion.html" class="btn-primary">
+
+Inscribir mi equipo
+
+</a>
+
+</div>
+
+</section>
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>Muralla Gaming</h3>
+
+<p>
+La comunidad competitiva de Call of Duty® Mobile donde nacen los campeones.
+</p>
+
+</div>
+
+<div>
+
+<h3>Enlaces</h3>
+
+<ul>
+
+<li><a href="index.html">Inicio</a></li>
+
+<li><a href="torneos.html">Torneos</a></li>
+
+<li><a href="inscripcion.html">Inscripción</a></li>
+
+<li><a href="resultados.html">Resultados</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Síguenos</h3>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-discord"></i></a>
+
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Muralla Gaming. Todos los derechos reservados.
+
+</p>
+
+</div>
+
+</footer>
+
+<a href="https://wa.me/57XXXXXXXXXX" class="whatsapp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<button id="topBtn">
+
+<i class="fas fa-chevron-up"></i>
+
+</button>
+
+<script src="script.js"></script>
+
 </body>
-  </html>
+
+</html>
