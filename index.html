@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muralla Gaming - Torneos de Call of Duty: Mobile">
+  <title>Muralla Gaming | Esports</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #050505;
+      border-bottom: 1px solid #252525;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #e21b16;
+    }
+
+    .menu {
+      font-size: 27px;
+    }
+
+    .hero {
+      padding: 70px 22px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, #3b0b0b 0%, #110707 35%, #080808 70%);
+    }
+
+    .tag {
+      color: #e21b16;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 14vw, 76px);
+      line-height: .95;
+      margin: 15px 0;
+      font-weight: 950;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: #e21b16;
+      display: block;
+      font-style: italic;
+    }
+
+    .hero p {
+      color: #c5c5c5;
+      max-width: 520px;
+      margin: 0 auto 28px;
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e21b16;
+      color: white;
+      padding: 15px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 8px 25px #e21b1630;
+    }
+
+    .btn:hover {
+      background: #ff2923;
+    }
+
+    section {
+      padding: 45px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .section-title span {
+      color: #e21b16;
+    }
+
+    .tournament {
+      border: 1px solid #681512;
+      border-radius: 14px;
+      padding: 25px;
+      background: linear-gradient(145deg, #161616, #0b0b0b);
+    }
+
+    .tournament small {
+      color: #e21b16;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .tournament h3 {
+      font-size: 28px;
+      margin: 8px 0 18px;
+    }
+
+    .info {
+      display: grid;
+      gap: 12px;
+      color: #ccc;
+      margin-bottom: 24px;
+    }
+
+    .info strong {
+      color: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 12px;
+      padding: 20px 12px;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .events {
+      display: grid;
+      gap: 10px;
+    }
+
+    .event {
+      border: 1px solid #292929;
+      border-radius: 10px;
+      padding: 16px;
+      background: #101010;
+    }
+
+    .event strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .event span {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .status {
+      color: #e21b16 !important;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 45px 20px 25px;
+      border-top: 1px solid #222;
+      background: #050505;
+    }
+
+    footer h2 {
+      font-size: 25px;
+    }
+
+    footer h2 span {
+      color: #e21b16;
+    }
+
+    footer p {
+      color: #888;
+      margin: 12px 0 25px;
+      font-size: 14px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+      font-size: 22px;
+    }
+
+    @media (min-width: 700px) {
+      .hero {
+        padding: 110px 30px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .info {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">MURALLA <span>GAMING</span></div>
+    <div class="menu">☰</div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="tag">BIENVENIDOS A</div>
+
+      <h1>
+        MURALLA
+        <span>GAMING</span>
+      </h1>
+
+      <p>
+        La plataforma de torneos de Call of Duty: Mobile
+        donde la competencia comienza.
+      </p>
+
+      <a href="#torneo" class="btn">🏆 INSCRIBIR MI EQUIPO</a>
+    </section>
+
+    <section id="torneo">
+
+      <h2 class="section-title">
+        <span>—</span> Torneo destacado <span>—</span>
+      </h2>
+
+      <div class="tournament">
+
+        <small>PRÓXIMO TORNEO</small>
+
+        <h3>MURALLA GAMING CUP #1</h3>
+
+        <div class="info">
+          <div>📅 <strong>Fecha por anunciar</strong></div>
+          <div>👥 <strong>16 equipos</strong></div>
+          <div>💰 <strong>Inscripción por anunciar</strong></div>
+        </div>
+
+        <a href="#contacto" class="btn">MÁS INFORMACIÓN →</a>
+
+      </div>
+    </section>
+
+    <section>
+
+      <h2 class="section-title">
+        <span>—</span> ¿Por qué Muralla Gaming? <span>—</span>
+      </h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🏆</div>
+          <h3>TORNEOS</h3>
+          <p>Competencia organizada para equipos de COD Mobile.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>COMUNIDAD</h3>
+          <p>Una comunidad creada para los amantes de los esports.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎁</div>
+          <h3>PREMIOS</h3>
+          <p>Reconocimiento y premios para los mejores equipos.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>ORGANIZACIÓN</h3>
+          <p>Reglas claras y torneos transparentes.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+
+      <h2 class="section-title">
+        <span>—</span> Próximos torneos <span>—</span>
+      </h2>
+
+      <div class="events">
+
+        <div class="event">
+          <strong>Muralla Gaming Cup #1</strong>
+          <span>16 equipos · Fecha por anunciar</span>
+          <div class="status">PRÓXIMAMENTE</div>
+        </div>
+
+        <div class="event">
+          <strong>Muralla Summer Cup</strong>
+          <span>Próximamente · Más información pronto</span>
+          <div class="status">PRÓXIMAMENTE</div>
+        </div>
+
+        <div class="event">
+          <strong>Muralla Championship</strong>
+          <span>Gran torneo · Próximamente</span>
+          <div class="status">PRÓXIMAMENTE</div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="contacto">
+
+    <h2>ESTO ES <span>MURALLA GAMING</span></h2>
+
+    <p>Competencia. Comunidad. Pasión.</p>
+
+    <div class="social">
+      <span>◎</span>
+      <span>▶</span>
+      <span>♪</span>
+      <span>◉</span>
+    </div>
+
+    <p>© 2026 Muralla Gaming · Todos los derechos reservados.</p>
+
+  </footer>
+
+</body>
+  </html>
