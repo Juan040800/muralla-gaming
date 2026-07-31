@@ -18,7 +18,14 @@
 </head>
 
 <body>
+<script>
+const menuBtn = document.querySelector(".mobile-menu");
+const menu = document.querySelector("#menu");
 
+menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
 <div class="background-glow"></div>
 
 <header id="header">
