@@ -377,6 +377,196 @@
     <p>© 2026 Muralla Gaming · Todos los derechos reservados.</p>
 
   </footer>
+<!-- INSCRIPCIÓN -->
+<section id="inscripcion" class="registro-section">
+  <div class="registro-box">
+    <div class="registro-tag">MURALLA GAMING</div>
 
+    <h2>INSCRIBE A TU <span>EQUIPO</span></h2>
+
+    <p>
+      Registra tu equipo para participar en el próximo torneo
+      de Call of Duty: Mobile.
+    </p>
+
+    <form id="registroForm">
+
+      <div class="campo">
+        <label for="equipo">Nombre del equipo</label>
+        <input
+          type="text"
+          id="equipo"
+          name="equipo"
+          placeholder="Ej. Muralla Squad"
+          required
+        >
+      </div>
+
+      <div class="campo">
+        <label for="capitan">Capitán</label>
+        <input
+          type="text"
+          id="capitan"
+          name="capitan"
+          placeholder="Nombre del capitán"
+          required
+        >
+      </div>
+
+      <div class="campo">
+        <label for="idcod">ID de COD Mobile</label>
+        <input
+          type="text"
+          id="idcod"
+          name="idcod"
+          placeholder="ID del capitán"
+          required
+        >
+      </div>
+
+      <div class="campo">
+        <label for="whatsapp">WhatsApp de contacto</label>
+        <input
+          type="tel"
+          id="whatsapp"
+          name="whatsapp"
+          placeholder="300 000 0000"
+          required
+        >
+      </div>
+
+      <h3>JUGADORES</h3>
+
+      <div class="jugadores">
+        <input type="text" name="jugador1" placeholder="Jugador 1" required>
+        <input type="text" name="jugador2" placeholder="Jugador 2" required>
+        <input type="text" name="jugador3" placeholder="Jugador 3" required>
+        <input type="text" name="jugador4" placeholder="Jugador 4" required>
+        <input type="text" name="jugador5" placeholder="Jugador 5" required>
+        <input type="text" name="suplente" placeholder="Suplente (opcional)">
+      </div>
+
+      <button type="submit" class="btn registro-btn">
+        🏆 ENVIAR INSCRIPCIÓN
+      </button>
+
+      <p class="privacidad">
+        Tus datos serán utilizados únicamente para gestionar
+        la inscripción al torneo.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<style>
+  .registro-section {
+    padding: 50px 20px;
+    max-width: 850px;
+    margin: auto;
+  }
+
+  .registro-box {
+    background: #101010;
+    border: 1px solid #681512;
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.35);
+  }
+
+  .registro-tag {
+    color: #e21b16;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  .registro-box h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .registro-box h2 span {
+    color: #e21b16;
+  }
+
+  .registro-box > p {
+    color: #999;
+    margin-bottom: 25px;
+  }
+
+  .campo {
+    margin-bottom: 17px;
+  }
+
+  .campo label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .campo input,
+  .jugadores input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #303030;
+    background: #080808;
+    color: white;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .campo input:focus,
+  .jugadores input:focus {
+    border-color: #e21b16;
+  }
+
+  .registro-box h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 28px 0 12px;
+  }
+
+  .jugadores {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .registro-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .privacidad {
+    text-align: center;
+    color: #666 !important;
+    font-size: 11px;
+    margin-top: 15px;
+  }
+
+  @media (min-width: 650px) {
+    .registro-box {
+      padding: 35px;
+    }
+
+    .jugadores {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById("registroForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("¡Registro preparado! Próximamente conectaremos este formulario con Google Sheets.");
+
+  });
+</script>
 </body>
   </html>
