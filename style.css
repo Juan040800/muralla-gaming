@@ -582,3 +582,46 @@ ANIMACIONES
     transform:scale(1.1);
     box-shadow:0 0 40px rgba(255,0,0,.8);
 }
+/*==========================
+COUNTDOWN
+==========================*/
+
+.countdown{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:95px;
+    height:95px;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:.35s;
+}
+
+.time-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(255,0,0,.45);
+}
+
+.time-box span{
+    font-size:34px;
+    font-weight:700;
+    color:#ff2d2d;
+    font-family:'Orbitron',sans-serif;
+}
+
+.time-box small{
+    margin-top:6px;
+    color:#ddd;
+    font-size:13px;
+}
