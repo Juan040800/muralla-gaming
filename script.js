@@ -73,3 +73,46 @@ function actualizarContador() {
 
 actualizarContador();
 setInterval(actualizarContador, 1000);
+const counters = document.querySelectorAll('.counter');
+
+const animateCounters = () => {
+
+    counters.forEach(counter => {
+
+        const target = +counter.getAttribute('data-target');
+
+        const updateCounter = () => {
+
+            const current = +counter.innerText;
+
+            const increment = target / 100;
+
+            if(current < target){
+
+                counter.innerText = Math.ceil(current + increment);
+
+                setTimeout(updateCounter, 20);
+
+            } else {
+
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+};
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            animateCounters();
+        }
+    });
+
+});
+
+observer.observe(document.querySelector('.stats'));
