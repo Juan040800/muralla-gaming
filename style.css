@@ -625,3 +625,66 @@ COUNTDOWN
     color:#ddd;
     font-size:13px;
 }
+/*==========================
+PRÓXIMO TORNEO
+==========================*/
+
+.next-tournament{
+    padding:90px 20px;
+}
+
+.next-tournament h2{
+    text-align:center;
+    margin-bottom:45px;
+    font-size:42px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.next-tournament span{
+    color:#ff2020;
+}
+
+.tournament-card{
+
+    max-width:1100px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,0,0,.18);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:40px;
+
+}
+
+.tournament-card h3{
+
+    font-size:32px;
+    margin-bottom:20px;
+
+}
+
+.tournament-card p{
+
+    margin:12px 0;
+    color:#d7d7d7;
+
+}
+
+.right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
