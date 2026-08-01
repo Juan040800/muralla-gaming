@@ -45,22 +45,31 @@ topBtn.addEventListener("click",()=>{
 // CONTADOR REGRESIVO
 // ===========================
 
-const fechaTorneo = new Date("December 20, 2026 18:00:00").getTime();
+const fechaTorneo = new Date("2026-08-30T18:00:00").getTime();
 
-setInterval(()=>{
+function actualizarContador() {
 
     const ahora = new Date().getTime();
+    const diferencia = fechaTorneo - ahora;
 
-    const distancia = fechaTorneo - ahora;
+    if (diferencia <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+    }
 
-    const dias = Math.floor(distancia/(1000*60*60*24));
-    const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-    const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
-    const segundos = Math.floor((distancia%(1000*60))/1000);
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerHTML=dias;
-    document.getElementById("hours").innerHTML=horas;
-    document.getElementById("minutes").innerHTML=minutos;
-    document.getElementById("seconds").innerHTML=segundos;
+    document.getElementById("days").textContent = dias;
+    document.getElementById("hours").textContent = horas;
+    document.getElementById("minutes").textContent = minutos;
+    document.getElementById("seconds").textContent = segundos;
+}
 
-},1000);
+actualizarContador();
+setInterval(actualizarContador, 1000);
