@@ -758,3 +758,49 @@ RANKING
     background:rgba(255,215,0,.12);
 
 }
+/*==========================
+ESTADÍSTICAS
+==========================*/
+
+.stats{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.stats h2{
+    font-size:40px;
+    margin-bottom:50px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.stat-box{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,0,0,0.2);
+    border-radius:20px;
+    padding:35px;
+    transition:0.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(255,0,0,0.3);
+}
+
+.stat-box h3{
+    font-size:50px;
+    color:#ff2020;
+    margin-bottom:15px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.stat-box p{
+    color:#bbb;
+}
