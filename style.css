@@ -166,12 +166,16 @@ header{
     flex-wrap:wrap;
 }
 
-.btn{
+.hero-buttons a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 28px;
+    border-radius:12px;
     text-decoration:none;
-    padding:16px 34px;
-    border-radius:60px;
-    font-weight:700;
+    font-weight:600;
     transition:.35s;
+    min-width:220px;
 }
 
 .btn-primary{
@@ -463,12 +467,13 @@ header{
     max-width:90%;
 }
 
-.hero-buttons{
+..hero-buttons{
     display:flex;
-    flex-direction:column;
-    width:100%;
-    gap:15px;
+    justify-content:center;
     align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
 }
 
 .hero-buttons a{
