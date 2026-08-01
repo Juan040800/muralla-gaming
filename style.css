@@ -1,6 +1,24 @@
-/* ===========================
-   MURALLA GAMING
-   =========================== */
+/* ===========================================
+   MURALLA GAMING — style.css
+   Estructura:
+   1. Reset y base
+   2. Fondo decorativo
+   3. Header / Menú
+   4. Hero
+   5. Botones
+   6. Secciones genéricas / Cards
+   7. Próximo Torneo
+   8. Ranking
+   9. Countdown
+   10. Estadísticas
+   11. Footer
+   12. Botón subir (#topBtn)
+   13. Animaciones
+   14. Responsive (mobile)
+   =========================================== */
+
+
+/* ===== 1. RESET Y BASE ===== */
 
 *{
     margin:0;
@@ -19,16 +37,27 @@ body{
     overflow-x:hidden;
 }
 
-/* Fondo */
+.container{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+/* ===== 2. FONDO DECORATIVO ===== */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
     background:
-    radial-gradient(circle at top,#8b000020,transparent 40%),
-    radial-gradient(circle at bottom,#ff000015,transparent 45%),
-    #090909;
+        radial-gradient(circle at top,#8b000020,transparent 40%),
+        radial-gradient(circle at bottom,#ff000015,transparent 45%),
+        #090909;
     z-index:-2;
 }
 
@@ -37,13 +66,14 @@ body::after{
     position:fixed;
     inset:0;
     background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
     background-size:45px 45px;
     z-index:-1;
 }
 
-/* Header */
+
+/* ===== 3. HEADER / MENÚ ===== */
 
 header{
     position:fixed;
@@ -54,16 +84,17 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,0,0,.15);
-    z-index:999;
+    z-index:1000;
+    background:rgba(10,10,10,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,0,0,.2);
 }
 
 .logo{
+    text-decoration:none;
     font-family:'Orbitron',sans-serif;
-    font-size:30px;
-    font-weight:800;
+    font-size:2rem;
+    font-weight:700;
     color:#fff;
 }
 
@@ -71,47 +102,53 @@ header{
     color:#ff2020;
 }
 
-/* Menú */
-
-.menu{
+#menu{
     display:flex;
     gap:28px;
 }
 
-.menu a{
+#menu a{
+    color:#fff;
     text-decoration:none;
-    color:white;
     font-weight:600;
-    transition:.35s;
+    transition:.3s;
     position:relative;
 }
 
-.menu a::after{
+#menu a:hover{
+    color:#ff2020;
+}
+
+#menu a::after{
     content:"";
     position:absolute;
     left:0;
     bottom:-6px;
-    width:0%;
+    width:0;
     height:2px;
     background:#ff2020;
-    transition:.35s;
+    transition:.3s;
 }
 
-.menu a:hover{
-    color:#ff2020;
-}
-
-.menu a:hover::after{
+#menu a:hover::after{
     width:100%;
 }
-/*==========================
- HERO
-==========================*/
+
+.mobile-menu{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+/* ===== 4. HERO ===== */
 
 .hero{
     position:relative;
     min-height:100vh;
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
@@ -119,8 +156,8 @@ header{
     overflow:hidden;
 
     background:
-    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.82)),
-    url("img/hero.jpg");
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.82)),
+        url("img/hero.jpg");
 
     background-size:cover;
     background-position:center;
@@ -173,15 +210,8 @@ header{
     line-height:1.8;
 }
 
-/* Botones */
 
-.buttons{
-    margin-top:45px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
+/* ===== 5. BOTONES ===== */
 
 .hero-buttons{
     margin-top:45px;
@@ -225,24 +255,8 @@ header{
     transform:translateY(-6px);
 }
 
-/* Animaciones */
 
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-  }
-/*==========================
-SECCIONES
-==========================*/
+/* ===== 6. SECCIONES GENÉRICAS / CARDS ===== */
 
 section{
     padding:90px 8%;
@@ -258,8 +272,6 @@ section{
 .section-title span{
     color:#ff2020;
 }
-
-/* Tarjetas */
 
 .cards{
     display:grid;
@@ -297,10 +309,6 @@ section{
 }
 
 .card:hover::before{
-    left:150%;
-}
-
-.card:hover::before{
     left:0;
 }
 
@@ -308,8 +316,8 @@ section{
     transform:translateY(-12px) scale(1.02);
     border-color:#ff2b2b;
     box-shadow:
-    0 0 20px rgba(255,40,40,.35),
-    0 0 60px rgba(255,40,40,.18);
+        0 0 20px rgba(255,40,40,.35),
+        0 0 60px rgba(255,40,40,.18);
 }
 
 .card i{
@@ -328,7 +336,196 @@ section{
     line-height:1.7;
 }
 
-/* Footer */
+
+/* ===== 7. PRÓXIMO TORNEO ===== */
+
+.next-tournament{
+    padding:90px 20px;
+}
+
+.next-tournament h2{
+    text-align:center;
+    margin-bottom:45px;
+    font-size:42px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.next-tournament span{
+    color:#ff2020;
+}
+
+.tournament-card{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,0,0,.18);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:40px;
+}
+
+.tournament-card h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.tournament-card p{
+    margin:12px 0;
+    color:#d7d7d7;
+}
+
+.right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* ===== 8. RANKING ===== */
+
+.ranking{
+    padding:90px 20px;
+}
+
+.ranking h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:40px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.ranking-table{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,0,0,.2);
+}
+
+.ranking-header,
+.ranking-row{
+    display:grid;
+    grid-template-columns:80px 1fr 120px;
+    padding:18px 25px;
+    align-items:center;
+}
+
+.ranking-header{
+    background:#ff2020;
+    font-weight:bold;
+}
+
+.ranking-row{
+    transition:.35s;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.ranking-row:hover{
+    background:rgba(255,0,0,.12);
+}
+
+.champion{
+    background:rgba(255,215,0,.12);
+}
+
+
+/* ===== 9. COUNTDOWN ===== */
+
+.countdown{
+    margin-top:60px;
+    margin-bottom:40px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:95px;
+    height:95px;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:.35s;
+}
+
+.time-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(255,0,0,.45);
+}
+
+.time-box span{
+    font-size:34px;
+    font-weight:700;
+    color:#ff2d2d;
+    font-family:'Orbitron',sans-serif;
+}
+
+.time-box small{
+    margin-top:6px;
+    color:#ddd;
+    font-size:13px;
+}
+
+
+/* ===== 10. ESTADÍSTICAS ===== */
+
+.stats{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.stats h2{
+    font-size:40px;
+    margin-bottom:50px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.stat-box{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,0,0,0.2);
+    border-radius:20px;
+    padding:35px;
+    transition:0.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(255,0,0,0.3);
+}
+
+.stat-box h3{
+    font-size:50px;
+    color:#ff2020;
+    margin-bottom:15px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.stat-box p{
+    color:#bbb;
+}
+
+
+/* ===== 11. FOOTER ===== */
 
 footer{
     background:#050505;
@@ -349,20 +546,77 @@ footer p{
     margin:8px 0;
 }
 
-/* Responsive */
 
-@media(max-width:900px){
+/* ===== 12. BOTÓN SUBIR ===== */
 
-    .menu{
-        gap:15px;
-        flex-wrap:wrap;
-        justify-content:center;
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#ff2020;
+    color:white;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:22px;
+    box-shadow:0 0 25px rgba(255,0,0,.5);
+    transition:.35s;
+    z-index:999;
+}
+
+#topBtn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(255,0,0,.8);
+}
+
+
+/* ===== 13. ANIMACIONES ===== */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
     }
-
-    header{
-        flex-direction:column;
-        gap:20px;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
+}
+
+@keyframes pulseGlow{
+    0%{
+        transform:scale(1);
+        opacity:.4;
+    }
+    100%{
+        transform:scale(1.35);
+        opacity:.9;
+    }
+}
+
+.card,
+.featured,
+.stats,
+.cta{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.mostrar{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ===== 14. RESPONSIVE (MOBILE) ===== */
+
+@media (max-width:900px){
 
     .hero h1{
         font-size:48px;
@@ -372,93 +626,10 @@ footer p{
         font-size:16px;
     }
 
-    .buttons{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .btn{
-        width:100%;
-        max-width:320px;
-        text-align:center;
-    }
-
     .section-title{
         font-size:30px;
     }
-  }
-/* ===== MENÚ ===== */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(10,10,10,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,0,0,.2);
 }
-
-.container{
-    max-width:1200px;
-    width:100%;
-    margin:auto;
-    padding:18px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    text-decoration:none;
-    font-size:2rem;
-    font-weight:700;
-}
-
-.logo span{
-    color:#ff2020;
-}
-
-#menu{
-    display:flex;
-    gap:28px;
-}
-
-#menu a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-    position:relative;
-}
-
-#menu a:hover{
-    color:#ff2020;
-}
-
-#menu a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:#ff2020;
-    transition:.3s;
-}
-
-#menu a:hover::after{
-    width:100%;
-}
-
-.mobile-menu{
-    display:none;
-    color:#fff;
-    font-size:30px;
-    cursor:pointer;
-}
-/* ===== RESPONSIVE MENÚ ===== */
 
 @media (max-width:768px){
 
@@ -481,10 +652,6 @@ header{
     .mobile-menu{
         display:block;
     }
-}
-/* ===== AJUSTES PARA CELULARES ===== */
-
-@media (max-width: 768px){
 
     .hero-content,
     .featured-content,
@@ -589,284 +756,5 @@ header{
         padding:12px 10px;
         font-size:13px;
     }
-}
-
-@keyframes pulseGlow{
-
-0%{
-transform:scale(1);
-opacity:.4;
-}
-
-100%{
-transform:scale(1.35);
-opacity:.9;
-}
-
-}
-/*==========================
-ANIMACIONES
-==========================*/
-
-.card,
-.featured,
-.stats,
-.cta{
-    opacity:0;
-    transform:translateY(60px);
-    transition:1s;
-}
-
-.mostrar{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* Botón subir */
-
-#topBtn{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:#ff2020;
-    color:white;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    font-size:22px;
-    box-shadow:0 0 25px rgba(255,0,0,.5);
-    transition:.35s;
-    z-index:999;
-}
-
-#topBtn:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 40px rgba(255,0,0,.8);
-}
-/*==========================
-COUNTDOWN
-==========================*/
-
-.countdown{
-    margin-top:50px;
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.time-box{
-    width:95px;
-    height:95px;
-    border-radius:18px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,0,0,.25);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    transition:.35s;
-}
-
-.time-box:hover{
-    transform:translateY(-6px);
-    box-shadow:0 0 25px rgba(255,0,0,.45);
-}
-
-.time-box span{
-    font-size:34px;
-    font-weight:700;
-    color:#ff2d2d;
-    font-family:'Orbitron',sans-serif;
-}
-
-.time-box small{
-    margin-top:6px;
-    color:#ddd;
-    font-size:13px;
-}
-/*==========================
-PRÓXIMO TORNEO
-==========================*/
-
-.next-tournament{
-    padding:90px 20px;
-}
-
-.next-tournament h2{
-    text-align:center;
-    margin-bottom:45px;
-    font-size:42px;
-    font-family:'Orbitron',sans-serif;
-}
-
-.next-tournament span{
-    color:#ff2020;
-}
-
-.tournament-card{
-
-    max-width:1100px;
-    margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:30px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,0,0,.18);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:20px;
-
-    padding:40px;
-
-}
-
-.tournament-card h3{
-
-    font-size:32px;
-    margin-bottom:20px;
-
-}
-
-.tournament-card p{
-
-    margin:12px 0;
-    color:#d7d7d7;
-
-}
-
-.right{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-}
-/*==========================
-RANKING
-==========================*/
-
-.ranking{
-    padding:90px 20px;
-}
-
-.ranking h2{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:40px;
-    font-family:'Orbitron',sans-serif;
-}
-
-.ranking-table{
-
-    max-width:900px;
-    margin:auto;
-
-    background:rgba(255,255,255,.05);
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(255,0,0,.2);
-
-}
-
-.ranking-header,
-.ranking-row{
-
-    display:grid;
-
-    grid-template-columns:80px 1fr 120px;
-
-    padding:18px 25px;
-
-    align-items:center;
-
-}
-
-.ranking-header{
-
-    background:#ff2020;
-
-    font-weight:bold;
-
-}
-
-.ranking-row{
-
-    transition:.35s;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-}
-
-.ranking-row:hover{
-
-    background:rgba(255,0,0,.12);
-
-}
-
-.champion{
-
-    background:rgba(255,215,0,.12);
-
-}
-/*==========================
-ESTADÍSTICAS
-==========================*/
-
-.stats{
-    padding:100px 20px;
-    text-align:center;
-}
-
-.stats h2{
-    font-size:40px;
-    margin-bottom:50px;
-    font-family:'Orbitron',sans-serif;
-}
-
-.stats-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
-}
-
-.stat-box{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,0,0,0.2);
-    border-radius:20px;
-    padding:35px;
-    transition:0.4s;
-}
-
-.stat-box:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(255,0,0,0.3);
-}
-
-.stat-box h3{
-    font-size:50px;
-    color:#ff2020;
-    margin-bottom:15px;
-    font-family:'Orbitron',sans-serif;
-}
-
-.stat-box p{
-    color:#bbb;
-}
+   }
+           
