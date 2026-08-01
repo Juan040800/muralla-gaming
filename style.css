@@ -1021,3 +1021,58 @@ FOOTER GRID
     }
 
 }
+/*==========================
+BADGE
+==========================*/
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 18px;
+    background:linear-gradient(135deg,#ff2020,#ff4d4d);
+    color:#fff;
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:1px;
+    border-radius:999px;
+    text-transform:uppercase;
+    box-shadow:0 0 20px rgba(255,32,32,.35);
+}
+
+/*==========================
+PLACEHOLDER IMAGEN
+==========================*/
+
+.image-placeholder{
+    width:100%;
+    max-width:360px;
+    aspect-ratio:1/1;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:6rem;
+
+    color:#ff2020;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(145deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02));
+
+    border:2px dashed rgba(255,32,32,.25);
+
+    transition:.35s;
+}
+
+.image-placeholder:hover{
+    transform:translateY(-6px) scale(1.03);
+    border-color:#ff2020;
+    box-shadow:0 0 35px rgba(255,32,32,.25);
+}
