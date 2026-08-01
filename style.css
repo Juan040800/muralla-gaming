@@ -538,3 +538,47 @@ opacity:.9;
 }
 
 }
+/*==========================
+ANIMACIONES
+==========================*/
+
+.card,
+.featured,
+.stats,
+.cta{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.mostrar{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Botón subir */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#ff2020;
+    color:white;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:22px;
+    box-shadow:0 0 25px rgba(255,0,0,.5);
+    transition:.35s;
+    z-index:999;
+}
+
+#topBtn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(255,0,0,.8);
+}
