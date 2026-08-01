@@ -41,3 +41,26 @@ topBtn.addEventListener("click",()=>{
     });
 
 });
+// ===========================
+// CONTADOR REGRESIVO
+// ===========================
+
+const fechaTorneo = new Date("December 20, 2026 18:00:00").getTime();
+
+setInterval(()=>{
+
+    const ahora = new Date().getTime();
+
+    const distancia = fechaTorneo - ahora;
+
+    const dias = Math.floor(distancia/(1000*60*60*24));
+    const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+    const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+    const segundos = Math.floor((distancia%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML=dias;
+    document.getElementById("hours").innerHTML=horas;
+    document.getElementById("minutes").innerHTML=minutos;
+    document.getElementById("seconds").innerHTML=segundos;
+
+},1000);
