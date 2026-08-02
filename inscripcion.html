@@ -319,16 +319,15 @@
     © 2026 Muralla Gaming · Todos los derechos reservados
   </footer>
 
-  <script>
-    document.getElementById("registroForm").addEventListener("submit", function(event) {
+ <script>
+document.getElementById("registroForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("¡Inscripción preparada!");
+});
+</script>
 
-      event.preventDefault();
-
-      alert("¡Inscripción preparada! Próximamente conectaremos este formulario con Google Sheets.");
-
-    });
-  <script type="module" src="firebase.js"></script>
+<script type="module" src="firebase.js"></script>
 <script type="module" src="inscripcion.js"></script>
 
 </body>
-  </html>
+</html>
